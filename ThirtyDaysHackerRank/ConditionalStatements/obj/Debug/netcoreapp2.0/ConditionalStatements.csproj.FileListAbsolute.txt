@@ -1,0 +1,11 @@
+C:\Users\Japheth\Documents\Training\iResolve\ThirtyDaysHackerRank\ConditionalStatements\bin\Debug\netcoreapp2.0\ConditionalStatements.deps.json
+C:\Users\Japheth\Documents\Training\iResolve\ThirtyDaysHackerRank\ConditionalStatements\bin\Debug\netcoreapp2.0\ConditionalStatements.runtimeconfig.json
+C:\Users\Japheth\Documents\Training\iResolve\ThirtyDaysHackerRank\ConditionalStatements\bin\Debug\netcoreapp2.0\ConditionalStatements.runtimeconfig.dev.json
+C:\Users\Japheth\Documents\Training\iResolve\ThirtyDaysHackerRank\ConditionalStatements\bin\Debug\netcoreapp2.0\ConditionalStatements.dll
+C:\Users\Japheth\Documents\Training\iResolve\ThirtyDaysHackerRank\ConditionalStatements\bin\Debug\netcoreapp2.0\ConditionalStatements.pdb
+C:\Users\Japheth\Documents\Training\iResolve\ThirtyDaysHackerRank\ConditionalStatements\obj\Debug\netcoreapp2.0\ConditionalStatements.csprojAssemblyReference.cache
+C:\Users\Japheth\Documents\Training\iResolve\ThirtyDaysHackerRank\ConditionalStatements\obj\Debug\netcoreapp2.0\ConditionalStatements.csproj.CoreCompileInputs.cache
+C:\Users\Japheth\Documents\Training\iResolve\ThirtyDaysHackerRank\ConditionalStatements\obj\Debug\netcoreapp2.0\ConditionalStatements.AssemblyInfoInputs.cache
+C:\Users\Japheth\Documents\Training\iResolve\ThirtyDaysHackerRank\ConditionalStatements\obj\Debug\netcoreapp2.0\ConditionalStatements.AssemblyInfo.cs
+C:\Users\Japheth\Documents\Training\iResolve\ThirtyDaysHackerRank\ConditionalStatements\obj\Debug\netcoreapp2.0\ConditionalStatements.dll
+C:\Users\Japheth\Documents\Training\iResolve\ThirtyDaysHackerRank\ConditionalStatements\obj\Debug\netcoreapp2.0\ConditionalStatements.pdb
