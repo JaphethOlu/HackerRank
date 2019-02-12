@@ -1,29 +1,38 @@
-﻿using System;
+﻿using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Collections;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using System.IO;
 using System.Linq;
-using static System.Console;
+using System.Reflection;
+using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
+using System.Text;
+using System;
+
 class Solution {
 
-    static void Main(String[] args) {
+    static void Main(string[] args) {
         int N = Convert.ToInt32(Console.ReadLine());
-        if(N%2 != 0)
-        {
-            WriteLine("Weird");
+        WhatsWeird(N);
+    }
+
+    static void WhatsWeird(int n) {
+        if(n%2 != 0) {
+            Console.WriteLine("Weird");
         }
         else
         {
-            if((N >= 2) && (N <= 5))
-            {
-                WriteLine("Not Weird");
+            if(n >= 2 && n <= 5) {
+                Console.WriteLine("Not Weird");
             }
-            if((N >= 6) && (N <= 20))
-            {
-                WriteLine("Wierd");
+            else if(n >= 6 && n <= 20) {
+                Console.WriteLine("Weird");
             }
-            if(N > 20)
-            {
-                WriteLine("Not Weird");
+            else {
+                Console.WriteLine("Not Weird");
             }
         }
     }
