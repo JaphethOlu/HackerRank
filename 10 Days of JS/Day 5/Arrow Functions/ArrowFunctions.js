@@ -28,15 +28,22 @@ function readLine() {
  * Parameter(s):
  * nums: An array of numbers.
  */
+/*
 function modifyArray(nums) {
 
     nums.forEach((element, index) => {
-        if (element % 2 == 0) {
-            nums[index] = element * 2;
-        } else {
-            nums[index] = element * 3;
-        }
+        (element % 2 == 0) ? nums[index] = element * 2 : nums[index] = element * 3;
     });
+
+    return nums;
+
+}
+*/
+
+// Second more efficient solution
+function modifyArray(nums) {
+
+    nums = nums.map((num) => (num % 2 == 0) ? num * 2 : num * 3);
 
     return nums;
 
