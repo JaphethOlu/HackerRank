@@ -21,21 +21,26 @@ process.stdin.on('end', _ => {
 function readLine() {
     return inputString[currentLine++];
 }
-/*
- * Create the function factorial here
- */
 
-function factorial(n) {
-    let output = n;
-    while (n >= 2) {
-        output = output * (n - 1);
-        n--;
-    }
-    return output;
+/*
+ * Complete the Rectangle function
+ */
+function Rectangle(a, b) {
+    this.length = a;
+    this.width = b;
+    this.perimeter = 2 * (a + b);
+    this.area = a * b;
 }
 
+
 function main() {
-    const n = +(readLine());
+    const a = +(readLine());
+    const b = +(readLine());
     
-    console.log(factorial(n));
+    const rec = new Rectangle(a, b);
+    
+    console.log(rec.length);
+    console.log(rec.width);
+    console.log(rec.perimeter);
+    console.log(rec.area);
 }

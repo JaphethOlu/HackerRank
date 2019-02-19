@@ -21,21 +21,26 @@ process.stdin.on('end', _ => {
 function readLine() {
     return inputString[currentLine++];
 }
-/*
- * Create the function factorial here
- */
 
-function factorial(n) {
-    let output = n;
-    while (n >= 2) {
-        output = output * (n - 1);
-        n--;
+/*
+ * Complete the reverseString function
+ * Use console.log() to print to stdout.
+ */
+function reverseString(s) {
+
+    try {
+        var reverseString = s.split("").reverse().join('');
+        console.log(reverseString);
+    } catch (err) { 
+        console.log(err.message);
+        console.log(s);
     }
-    return output;
+    
 }
 
+
 function main() {
-    const n = +(readLine());
+    const s = eval(readLine());
     
-    console.log(factorial(n));
+    reverseString(s);
 }
