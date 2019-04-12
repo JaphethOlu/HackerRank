@@ -70,27 +70,6 @@ class Solution {
      *
      */
     static bool hasCycle(SinglyLinkedListNode head) {
-        
-        /*
-        // Only Test Case 0 and 2 because of Time Complexity
-        if(head == null || head.next == null)
-        {
-            return false;
-        }
-        else
-        {
-            var currentNode = head.next;
-            while(currentNode != null)
-            {
-                if(head == currentNode)
-                {
-                    return true;
-                }
-                currentNode = currentNode.next;
-            }
-            return hasCycle(head.next);
-        }
-        */
 
         // All Test Cases pass because of Time and Space Complexity Trade-Off
         var nodes = new HashSet<SinglyLinkedListNode>();
