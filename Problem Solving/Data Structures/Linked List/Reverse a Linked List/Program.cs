@@ -58,7 +58,7 @@ class Solution {
         }
     }
 
-    // Complete the hasCycle function below.
+// Complete the reverse function below.
 
     /*
      * For your reference:
@@ -69,61 +69,22 @@ class Solution {
      * }
      *
      */
-    
-    // Space Complexity O(1)
-    // Time Complexity O(n)
-    static bool hasCycle(SinglyLinkedListNode head) {
+    static SinglyLinkedListNode reverse(SinglyLinkedListNode head) {
 
-        var slowRunner = head;
+        var current = head;
+        SinglyLinkedListNode prev = null;
+        SinglyLinkedListNode next = null;
 
-        var fastRunner = head.next;
-
-        while(slowRunner != null && fastRunner != null && fastRunner.next != null)
+        while(current != null)
         {
-            if(slowRunner == fastRunner || slowRunner == fastRunner.next)
-            {
-                return true;
-            }
-
-            slowRunner = slowRunner.next;
-            fastRunner = fastRunner.next.next;
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
         }
 
-        return false;
-
+        return prev;
     }
-
-
-    /*
-    // Space Complexity O(n)
-    // Time Complexity O(n)
-    static bool hasCycle(SinglyLinkedListNode head) {
-
-        // All Test Cases pass because of Time and Space Complexity Trade-Off
-        var nodes = new HashSet<SinglyLinkedListNode>();
-        if(head == null || head.next == null)
-        {
-            return false;
-        }
-        else
-        {
-            while(head != null)
-            {
-                if(nodes.Contains(head))
-                {
-                    return true;
-                }
-                else
-                {
-                    nodes.Add(head);
-                    head = head.next;
-                }
-            }
-            return false;
-        }
-
-    }
-    */
 
     static void Main(string[] args) {
         TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
@@ -131,8 +92,6 @@ class Solution {
         int tests = Convert.ToInt32(Console.ReadLine());
 
         for (int testsItr = 0; testsItr < tests; testsItr++) {
-            int index = Convert.ToInt32(Console.ReadLine());
-
             SinglyLinkedList llist = new SinglyLinkedList();
 
             int llistCount = Convert.ToInt32(Console.ReadLine());
@@ -141,25 +100,11 @@ class Solution {
                 int llistItem = Convert.ToInt32(Console.ReadLine());
                 llist.InsertNode(llistItem);
             }
-          
-          	SinglyLinkedListNode extra = new SinglyLinkedListNode(-1);
-            SinglyLinkedListNode temp = llist.head;
 
-            for (int i = 0; i < llistCount; i++) {
-                if (i == index) {
-                    extra = temp;
-                }
+            SinglyLinkedListNode llist1 = reverse(llist.head);
 
-                if (i != llistCount-1) {
-                    temp = temp.next;
-                }
-            }
-      
-      		temp.next = extra;
-
-            bool result = hasCycle(llist.head);
-
-            textWriter.WriteLine((result ? 1 : 0));
+            PrintSinglyLinkedList(llist1, " ", textWriter);
+            textWriter.WriteLine();
         }
 
         textWriter.Flush();

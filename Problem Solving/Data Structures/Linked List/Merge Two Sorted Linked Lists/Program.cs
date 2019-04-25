@@ -58,7 +58,7 @@ class Solution {
         }
     }
 
-    // Complete the hasCycle function below.
+// Complete the mergeLists function below.
 
     /*
      * For your reference:
@@ -69,61 +69,31 @@ class Solution {
      * }
      *
      */
-    
-    // Space Complexity O(1)
-    // Time Complexity O(n)
-    static bool hasCycle(SinglyLinkedListNode head) {
+    static SinglyLinkedListNode mergeLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
 
-        var slowRunner = head;
-
-        var fastRunner = head.next;
-
-        while(slowRunner != null && fastRunner != null && fastRunner.next != null)
+        if(head1 == null)
         {
-            if(slowRunner == fastRunner || slowRunner == fastRunner.next)
-            {
-                return true;
-            }
-
-            slowRunner = slowRunner.next;
-            fastRunner = fastRunner.next.next;
+            return head2;
         }
-
-        return false;
-
-    }
-
-
-    /*
-    // Space Complexity O(n)
-    // Time Complexity O(n)
-    static bool hasCycle(SinglyLinkedListNode head) {
-
-        // All Test Cases pass because of Time and Space Complexity Trade-Off
-        var nodes = new HashSet<SinglyLinkedListNode>();
-        if(head == null || head.next == null)
+        else if(head2 == null)
         {
-            return false;
+            return head1;
         }
         else
         {
-            while(head != null)
+            if(head1.data <= head2.data)
             {
-                if(nodes.Contains(head))
-                {
-                    return true;
-                }
-                else
-                {
-                    nodes.Add(head);
-                    head = head.next;
-                }
+                head1.next = mergeLists(head1.next, head2);
+                return head1;
             }
-            return false;
+            else
+            {
+                head2.next = mergeLists(head1, head2.next);
+                return head2;
+            }
         }
 
     }
-    */
 
     static void Main(string[] args) {
         TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
@@ -131,35 +101,28 @@ class Solution {
         int tests = Convert.ToInt32(Console.ReadLine());
 
         for (int testsItr = 0; testsItr < tests; testsItr++) {
-            int index = Convert.ToInt32(Console.ReadLine());
+            SinglyLinkedList llist1 = new SinglyLinkedList();
 
-            SinglyLinkedList llist = new SinglyLinkedList();
+            int llist1Count = Convert.ToInt32(Console.ReadLine());
 
-            int llistCount = Convert.ToInt32(Console.ReadLine());
-
-            for (int i = 0; i < llistCount; i++) {
-                int llistItem = Convert.ToInt32(Console.ReadLine());
-                llist.InsertNode(llistItem);
+            for (int i = 0; i < llist1Count; i++) {
+                int llist1Item = Convert.ToInt32(Console.ReadLine());
+                llist1.InsertNode(llist1Item);
             }
           
-          	SinglyLinkedListNode extra = new SinglyLinkedListNode(-1);
-            SinglyLinkedListNode temp = llist.head;
+          	SinglyLinkedList llist2 = new SinglyLinkedList();
 
-            for (int i = 0; i < llistCount; i++) {
-                if (i == index) {
-                    extra = temp;
-                }
+            int llist2Count = Convert.ToInt32(Console.ReadLine());
 
-                if (i != llistCount-1) {
-                    temp = temp.next;
-                }
+            for (int i = 0; i < llist2Count; i++) {
+                int llist2Item = Convert.ToInt32(Console.ReadLine());
+                llist2.InsertNode(llist2Item);
             }
-      
-      		temp.next = extra;
 
-            bool result = hasCycle(llist.head);
+            SinglyLinkedListNode llist3 = mergeLists(llist1.head, llist2.head);
 
-            textWriter.WriteLine((result ? 1 : 0));
+            PrintSinglyLinkedList(llist3, " ", textWriter);
+            textWriter.WriteLine();
         }
 
         textWriter.Flush();
