@@ -8,7 +8,7 @@
 
 - [10 Days of Statistics](./10DayofStatistics)
 
-## Language Proficiency
+## Specialized Skills
 
 - SQL
   - [Basic Select](./SQL/BasicSelect)
